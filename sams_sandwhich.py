@@ -45,13 +45,10 @@ def dressing_selection(): #lets user select dressing/sauce
 #main program
 print("Welcome to Sam's Sandwich Shop!")
 bread_choice=bread_selection()
-
 meat_choice=meat_selection()
-
 cheese_choice=cheese_selection()
-
 dressing_choice=dressing_selection()
-#print statements
+
 print(f"Your selected bread: {bread_choice}")
 print(f"Your selected meat: {meat_choice}")
 print(f"Your selected cheese: {cheese_choice}")
