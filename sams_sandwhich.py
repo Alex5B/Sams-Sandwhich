@@ -1,6 +1,17 @@
 #sams sandwhich
 import datetime
 
+def force_number(message,lower,upper):
+    while True:
+        try:
+            num=int(input(message))
+            if num>=lower and num<=upper:
+                return num
+            else:
+                print(f"Invalid number, please enter between {lower} - {upper}")
+        except:
+            print("Error - only type in numbers please")
+    
 def bread_selection(): #lets user select bread
     bread_list = ["White","Brown","Italian","Flatbread"]
     count=0
@@ -8,17 +19,17 @@ def bread_selection(): #lets user select bread
     while count < len(bread_list): #prints out each item on the list
         print(count+1," ", bread_list[count])
         count+=1
-    bread_selected=int(input("Which bread did you want? Enter a number: "))
+    bread_selected=force_number("What bread do you want",1,len(bread_list))
     return bread_list[bread_selected-1] #returns back a string
 
-def meat_selection(): #lets user meat bread
+def meat_selection(): #lets user select meat
     meat_list = ["No meat","Chicken","Pork","Ham","Meatballs","Turkey"]
     count=0
     print("We have the following meats: ")
     while count < len(meat_list):
         print(count+1," ", meat_list[count])
         count+=1
-    meat_selected=int(input("Which meat did you want? Enter a number: "))
+    meat_selected=force_number("Which meat did you want? Enter a number: ",1,len(meat_list)) #plugs in force number function to add boundaries
     return meat_list[meat_selected-1]
 
 def cheese_selection(): #lets user select cheese
@@ -28,7 +39,7 @@ def cheese_selection(): #lets user select cheese
     while count < len(cheese_list):
         print(count+1," ", cheese_list[count])
         count+=1
-    cheese_selected=int(input("Which cheese did you want? Enter a number: "))
+    cheese_selected=force_number("Which cheese do you want? Enter a number: ",1,len(cheese_list))
     return cheese_list[cheese_selected-1]
 
 def salads_selection():
@@ -58,21 +69,22 @@ def dressing_selection(): #lets user select dressing/sauce
     while count < len(dressing_list):
         print(count+1," ", dressing_list[count])
         count+=1
-    dressing_selected=int(input("Which dressing did you want? Enter a number: "))
+    dressing_selected=force_number("Which dressing did you want? Enter a number: ",1,len(dressing_list))
     return dressing_list[dressing_selected-1]
 
 def output_textfile(first_name,cell_phone,sandwhich_order):
     date_time=datetime.datetime.now()
     outF=open("sams_sandwhich.txt","a")#opening up a new file
     print(f"\n*** Order for {first_name} - {cell_phone}: ***")
-    outFile.write(f"\nDate of booking:{date_time}")
     for item in sandwhich_order:
-        print(item)#printing each item in the list to the console
-        outFile.write(f"\nEnd of order: {date_time}")
+        outF.write((item))#printing each item in the list to the console
+        outF.write("\n")
+    outF.write(f"\nEnd of order: {date_time}")
+    outF.write(f"\n*****************************")
     print(f"***End of order: {date_time} ***")
-    outFile.write("\n")
-    outFile.write("\n")
-    outFile.write()#closes off text file
+    outF.write("\n")
+    outF.write("\n")
+    outF.close()#closes off text file
     #once the file prints, it goes back to the menu
 
 
@@ -88,13 +100,13 @@ dressing_choice=dressing_selection()
 
 sandwhich_order=[] #empty list to append order to
 
-sandwhich_order.append(first_name)
-sandwhich_order.append(cell_phone)
+sandwhich_order.append(f"\n\n***********************************")
+sandwhich_order.append(f"*** Order for {first_name} - {cell_phone} ***\n")
 sandwhich_order.append(f"Bread: {bread_choice}")
 sandwhich_order.append(f"Meat: {meat_choice}")
 sandwhich_order.append(f"Cheese: {cheese_choice}")
-sandwhich_order.append(f"Salad  choice: {salad_choice}")
-sandwhich_order.append(f"Dressing choice: {dressing_choice}")
+sandwhich_order.append(f"Salad(s): {salad_choice}")
+sandwhich_order.append(f"Dressing: {dressing_choice}")
 output_textfile(first_name,cell_phone,sandwhich_order)
 
 print(f"Your selected bread: {bread_choice}")
@@ -102,3 +114,4 @@ print(f"Your selected meat: {meat_choice}")
 print(f"Your selected cheese: {cheese_choice}")
 print(f"Your selected salad(s): {salad_choice}")
 print(f"Your selected dressing: {dressing_choice}")
+
