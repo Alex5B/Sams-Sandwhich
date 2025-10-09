@@ -1,25 +1,46 @@
-#sams sandwhich
-import datetime
+#Sams Sandwhich Ordering menu
+import datetime  #imports datetime 
 
+#Validates the input of the number to be between lower and upper variables, with only valid numbers.
 def force_number(message,lower,upper):
     while True:
         try:
             num=int(input(message))
-            if num>=lower and num<=upper:
+            if num>=lower and num<=upper:   #if number is between lower and upper it continues or gives error statement
                 return num
             else:
                 print(f"Invalid number, please enter between {lower} - {upper}")
-        except:
+        except:         #except statement; if everything is invalid
             print("Error - only type in numbers please")
-    
+
+#validates the input of a name, name must be between lower and upper character length.
+def force_name(message,lower,upper): 
+    while True: #this is an infinite loop
+        name = str(input(message)).title() #asks for the user to enter their name, adds capital letter
+        if len(name)>=lower and len(name)<=upper and name.isalpha():
+            return name #returns a valid name back to the variable that called the function
+        else:
+            print("Invalid name, enter in 2-15 valid characters")
+        
+#validates the cellphone number input; checks length between lower and upper variables, and inputted data is all numbers
+def force_cellphone_number(message,lower,upper):
+    while True:
+        cell=str(input(message))
+        if len(cell)>=lower and len(cell) <=upper and cell.isnumeric(): #checks length of cellphone and is a number
+            break
+        else:
+            print(f"ERROR! Please enter {lower} - {upper} valid numbers") #error message
+    return cell
+
+#bread selection menu
 def bread_selection(): #lets user select bread
-    bread_list = ["White","Brown","Italian","Flatbread"]
+    bread_list = ["White","Brown","Italian","Flatbread"] 
     count=0
     print("We have the following breads: ")
-    while count < len(bread_list): #prints out each item on the list
+    while count < len(bread_list): #prints out each item on the list 
         print(count+1," ", bread_list[count])
         count+=1
-    bread_selected=force_number("What bread do you want",1,len(bread_list))
+    bread_selected=force_number("What bread do you want?: ",1,len(bread_list)) #uses force_number to validate entered number.
     return bread_list[bread_selected-1] #returns back a string
 
 def meat_selection(): #lets user select meat
@@ -90,8 +111,8 @@ def output_textfile(first_name,cell_phone,sandwhich_order):
 
 
 #main program
-first_name=str(input("What is your first name?"))
-cell_phone=str(input("What is your cellphone number?"))
+first_name=force_name("What is your first name?",2,15)
+cell_phone=force_cellphone_number("What is your cellphone number?",7,15)
 bread_choice=bread_selection()
 meat_choice=meat_selection()
 cheese_choice=cheese_selection()

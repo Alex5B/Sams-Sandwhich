@@ -140,3 +140,59 @@ Dressing: Garlic Aioli
 End of order: 2025-10-08 14:58:54.363507
 *****************************
 
+
+
+***********************************
+*** Order for Alex - 100004438353 ***
+
+Bread: White
+Meat: Pork
+Cheese: Swiss
+Salad(s): Carrot Tomato
+Dressing: Garlic Aioli
+
+End of order: 2025-10-10 09:06:52.768312
+*****************************
+
+
+
+***********************************
+*** Order for Alex - 123456789 ***
+
+Bread: Brown
+Meat: Ham
+Cheese: American
+Salad(s): 
+Dressing: Garlic Aioli
+
+End of order: 2025-10-10 09:23:38.678558
+*****************************
+
+
+
+***********************************
+*** Order for Alex - 0382948372 ***
+
+Bread: Flatbread
+Meat: Turkey
+Cheese: Swiss
+Salad(s): Onions Lettuce Tomato Cucumber Carrot Carrot Carrot
+Dressing: Honey Musted
+
+End of order: 2025-10-10 09:26:12.072589
+*****************************
+
+
+
+***********************************
+*** Order for Alex - 40428484722 ***
+
+Bread: Italian
+Meat: Ham
+Cheese: Cheddar
+Salad(s): Carrot Carrot Tomato Lettuce
+Dressing: Garlic Aioli
+
+End of order: 2025-10-10 09:28:47.064600
+*****************************
+
