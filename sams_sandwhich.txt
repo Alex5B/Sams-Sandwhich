@@ -196,3 +196,171 @@ Dressing: Garlic Aioli
 End of order: 2025-10-10 09:28:47.064600
 *****************************
 
+
+
+***********************************
+*** Order for Alex - 4038538046 ***
+
+Bread: Italian
+Meat: Chicken
+Cheese: American
+Salad(s): Lettuce,Carrot,Carrot,Carrot,Tomato
+Dressing: Garlic Aioli
+
+End of order: 2025-10-13 10:13:25.269511
+*****************************
+
+
+
+***********************************
+*** Order for Alex - 39853953 ***
+
+Bread: Italian
+Meat: Chicken
+Cheese: American
+Salad(s): Tomato
+Dressing: Honey Musted
+
+End of order: 2025-10-13 10:21:30.656656
+*****************************
+
+
+
+***********************************
+*** Order for Alex - 348963746 ***
+
+Bread: Italian
+Meat: Pork
+Cheese: American
+Salad(s): Tomato
+Dressing: Honey Musted
+
+End of order: 2025-10-13 10:24:56.586827
+*****************************
+
+
+
+***********************************
+*** Order for Alex - 2389524976 ***
+
+Bread: Italian
+Meat: Pork
+Cheese: American
+Salad(s): Lettuce
+Dressing: Garlic Aioli
+
+End of order: 2025-10-13 10:27:08.648014
+*****************************
+
+
+
+***********************************
+*** Order for Alex - 2595832855 ***
+
+Bread: Italian
+Meat: Pork
+Cheese: American
+Salad(s): No Salads, No Salads
+Dressing: Garlic Aioli
+
+End of order: 2025-10-13 10:29:22.212387
+*****************************
+
+
+
+***********************************
+*** Order for Alex - 24689274968 ***
+
+Bread: Italian
+Meat: Pork
+Cheese: American
+Salad(s): No Salads
+Dressing: Garlic Aioli
+
+End of order: 2025-10-13 10:31:32.318772
+*****************************
+
+
+
+***********************************
+*** Order for Alex - 42608742624 ***
+
+Bread: Italian
+Meat: Pork
+Cheese: American
+Salad(s): No Salads
+Dressing: Garlic Aioli
+
+End of order: 2025-10-13 10:34:02.271012
+*****************************
+
+
+
+***********************************
+*** Order for Alex - 4286246984 ***
+
+Bread: Flatbread
+Meat: Ham
+Cheese: Mozzerella
+Salad(s): Carrot, Carrot, Tomato, No Salads
+Dressing: Garlic Aioli
+
+End of order: 2025-10-13 10:34:21.562235
+*****************************
+
+
+
+***********************************
+*** Order for Alex - 4942846746 ***
+
+Bread: Italian
+Meat: Pork
+Cheese: American
+Salad(s): Carrot, No Salads
+Dressing: Garlic Aioli
+
+End of order: 2025-10-13 10:35:01.039820
+*****************************
+
+
+
+***********************************
+*** Order for Alex - 24986724968 ***
+
+Bread: Italian
+Meat: Pork
+Cheese: American
+Salad(s): Carrot, 
+Dressing: BBQ Sauce
+
+End of order: 2025-10-13 10:36:16.233097
+*****************************
+
+
+
+***********************************
+*** Order for Alex - 40239683406 ***
+
+Bread: Italian
+Meat: Pork
+Cheese: American
+Salad(s): Carrot, No Salads
+Dressing: Garlic Aioli
+
+End of order: 2025-10-13 10:41:26.850360
+*****************************
+
+
+
+***********************************
+*** Order for Alex - 205826426 ***
+
+Bread: Italian
+Meat: Pork
+Cheese: American
+Salad(s): Lettuce, Tomato, Carrot, Cucumber, Onions, None
+Dressing: Garlic Aioli
+
+End of order: 2025-10-13 10:44:51.262199
+*****************************
+

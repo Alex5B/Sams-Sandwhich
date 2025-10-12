@@ -64,24 +64,20 @@ def cheese_selection(): #lets user select cheese
     return cheese_list[cheese_selected-1]
 
 def salads_selection():
-    salad_list = ["Lettuce","Tomato","Carrot","Cucumber","Onions"]
+    salad_list = ["Lettuce","Tomato","Carrot","Cucumber","Onions","None"]
     count = 0
     print("We have the following salads, you can have as many as you want")
     while count <len(salad_list):
         print(count+1," ",salad_list[count])
         count +=1
-    print("Press ENTER when you have finished chosing your salads")
-    salads_added = "" #will hold a string of more than one item
-    selected_salad = " " #prompts the user to enter a number in to select a salad
-
-    while selected_salad != "":
-        selected_salad = input(f"What number salad do you want?\nYou have selected: {salads_added}")
-        if selected_salad != "": #if you press enter the statement wont run
-            selected_salad = int(selected_salad)
-            #this variable keeps adding on each selected item from salad list
-            salads_added = salads_added + " " + salad_list[selected_salad-1]
-    return salads_added.strip() #removes empty space at start of the string
-
+    salad_choice = [] #empty list to hold selected salads
+    while True:
+        salad_options=force_number("What number salad do you want?",0,len(salad_list))
+        salad_choice.append(salad_list[salad_options-1]) #adding selected salad to the list
+        print(f"Your selected salads are {salad_choice} \nPress 0 to exit.")
+        if salad_options==6 or salad_options==0:
+            break
+    return ", ".join(salad_choice) #returns a string formatting the selected options
 
 def dressing_selection(): #lets user select dressing/sauce
     dressing_list = ["No dressing","Honey Musted","Garlic Aioli","BBQ Sauce","Mayonnaise","Ketchup","Sweet Chilli", "Ranch"]
