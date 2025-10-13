@@ -364,3 +364,31 @@ Dressing: Garlic Aioli
 End of order: 2025-10-13 10:44:51.262199
 *****************************
 
+
+
+***********************************
+*** Order for Alex - 30835353 ***
+
+Bread: Italian
+Meat: Pork
+Cheese: American
+Salad(s): Carrot, None
+Dressing: Garlic Aioli
+
+End of order: 2025-10-13 20:49:38.508231
+*****************************
+
+
+
+***********************************
+*** Order for Alex - 429064363 ***
+
+Bread: White
+Meat: Pork
+Cheese: American
+Salad(s): Carrot, None
+Dressing: No dressing
+
+End of order: 2025-10-13 20:52:28.804515
+*****************************
+

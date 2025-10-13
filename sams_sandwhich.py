@@ -1,4 +1,4 @@
-#Sams Sandwhich Ordering menu
+#Sams Sandwhich Ordering menu. Allows user to create a sandwhich with the order outputted to a seperate text file.
 import datetime  #imports datetime 
 
 #Validates the input of the number to be between lower and upper variables, with only valid numbers.
@@ -32,68 +32,57 @@ def force_cellphone_number(message,lower,upper):
             print(f"ERROR! Please enter {lower} - {upper} valid numbers") #error message
     return cell
 
+def print_lists(list,item): #creates a function which condences code length by removing repeated lines of printing code
+    count = 0
+    print(f"We have the follwing {item};")
+    while count < len(list):               #prints out all available options of the food
+        print(count+1," ",list[count])
+        count+=1
+    return  #returns variable
+
+
 #bread selection menu
 def bread_selection(): #lets user select bread
     bread_list = ["White","Brown","Italian","Flatbread"] 
-    count=0
-    print("We have the following breads: ")
-    while count < len(bread_list): #prints out each item on the list 
-        print(count+1," ", bread_list[count])
-        count+=1
+    print_lists(bread_list,"breads")
     bread_selected=force_number("What bread do you want?: ",1,len(bread_list)) #uses force_number to validate entered number.
     return bread_list[bread_selected-1] #returns back a string
 
 def meat_selection(): #lets user select meat
     meat_list = ["No meat","Chicken","Pork","Ham","Meatballs","Turkey"]
-    count=0
-    print("We have the following meats: ")
-    while count < len(meat_list):
-        print(count+1," ", meat_list[count])
-        count+=1
-    meat_selected=force_number("Which meat did you want? Enter a number: ",1,len(meat_list)) #plugs in force number function to add boundaries
+    print_lists(meat_list,"meats")
+    meat_selected=force_number("Which meat did you want? Enter a number: ",1,len(meat_list)) #plugs in force number function to prevent code breaking
     return meat_list[meat_selected-1]
 
 def cheese_selection(): #lets user select cheese
     cheese_list = ["No cheese","Cheddar","American","Mozzerella","Swiss"]
-    count=0
-    print("We have the following cheeses: ")
-    while count < len(cheese_list):
-        print(count+1," ", cheese_list[count])
-        count+=1
-    cheese_selected=force_number("Which cheese do you want? Enter a number: ",1,len(cheese_list))
+    print_lists(cheese_list,"cheeses")
+    cheese_selected=force_number("Which cheese do you want? Enter a number: ",1,len(cheese_list))  #plugs in force number to prevent breaking
     return cheese_list[cheese_selected-1]
 
-def salads_selection():
+def salads_selection(): #function allows for salad selection, of which multiple are allowed
     salad_list = ["Lettuce","Tomato","Carrot","Cucumber","Onions","None"]
-    count = 0
-    print("We have the following salads, you can have as many as you want")
-    while count <len(salad_list):
-        print(count+1," ",salad_list[count])
-        count +=1
+    print_lists(salad_list,"salads")
     salad_choice = [] #empty list to hold selected salads
-    while True:
+    while True: #allows for looping the salad choosing option so user can pick multiple salads
         salad_options=force_number("What number salad do you want?",0,len(salad_list))
         salad_choice.append(salad_list[salad_options-1]) #adding selected salad to the list
         print(f"Your selected salads are {salad_choice} \nPress 0 to exit.")
-        if salad_options==6 or salad_options==0:
+        if salad_options==6 or salad_options==0: #both options work and allow user to exit out of while true loop
             break
     return ", ".join(salad_choice) #returns a string formatting the selected options
 
 def dressing_selection(): #lets user select dressing/sauce
     dressing_list = ["No dressing","Honey Musted","Garlic Aioli","BBQ Sauce","Mayonnaise","Ketchup","Sweet Chilli", "Ranch"]
-    count=0
-    print("We have the following dressings: ")
-    while count < len(dressing_list):
-        print(count+1," ", dressing_list[count])
-        count+=1
+    print_lists(dressing_list,"dressings")
     dressing_selected=force_number("Which dressing did you want? Enter a number: ",1,len(dressing_list))
     return dressing_list[dressing_selected-1]
 
-def output_textfile(first_name,cell_phone,sandwhich_order):
-    date_time=datetime.datetime.now()
+def output_textfile(first_name,cell_phone,sandwhich_order): #function allows for outputting final order in a formatted display in a text file
+    date_time=datetime.datetime.now() #gathers the date from when the order is finalised
     outF=open("sams_sandwhich.txt","a")#opening up a new file
     print(f"\n*** Order for {first_name} - {cell_phone}: ***")
-    for item in sandwhich_order:
+    for item in sandwhich_order: #prints out each item appeneded to sandwhich_order
         outF.write((item))#printing each item in the list to the console
         outF.write("\n")
     outF.write(f"\nEnd of order: {date_time}")
@@ -117,6 +106,7 @@ dressing_choice=dressing_selection()
 
 sandwhich_order=[] #empty list to append order to
 
+#appends all necessary parts to create a formatted display in notepad
 sandwhich_order.append(f"\n\n***********************************")
 sandwhich_order.append(f"*** Order for {first_name} - {cell_phone} ***\n")
 sandwhich_order.append(f"Bread: {bread_choice}")
@@ -126,6 +116,7 @@ sandwhich_order.append(f"Salad(s): {salad_choice}")
 sandwhich_order.append(f"Dressing: {dressing_choice}")
 output_textfile(first_name,cell_phone,sandwhich_order)
 
+#prints out selected options to the terminal
 print(f"Your selected bread: {bread_choice}")
 print(f"Your selected meat: {meat_choice}")
 print(f"Your selected cheese: {cheese_choice}")
